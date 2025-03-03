@@ -5,8 +5,7 @@ import easygui
 class read_h5_file:    
     def load(self):
         file_path = easygui.fileopenbox(filetypes = "*.h5", multiple=False)
-        if file_path is not None:
-            file_path = easygui.fileopenbox(filetypes = "*.h5", multiple=False)
+        if file_path is not None:            
             hdf5 = h5py.File(file_path, 'r')
             h5_file = hdf5.get('Matrix')
             scale = h5_file.attrs.__getitem__('IGORWaveScaling')
